@@ -3,6 +3,7 @@ import axios from "axios";
 import "./NewItemForm.css";
 
 function NewItemForm({ setTransactionList, transactionList }) {
+  const baseURL = `https://coinsaverapi.onrender.com/transactions`;
   const [formData, setFormData] = useState({
     item_name: "",
     amount: "",
@@ -22,12 +23,7 @@ function NewItemForm({ setTransactionList, transactionList }) {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        `${
-          process.env.REACT_APP_BACKEND_DOMAIN || "http://localhost:3001"
-        }/transactions/create-transactions`,
-        formData
-      );
+      const response = await axios.post(baseURL, formData);
 
       setTransactionList([response.data.data, ...transactionList]);
 
@@ -91,23 +87,7 @@ function NewItemForm({ setTransactionList, transactionList }) {
             onChange={handleChange}
           />
         </div>
-        <div className="m-5">
-          <label htmlFor="category">Category</label>
-          <select
-            id="category"
-            name="category"
-            onChange={handleChange}
-            className="my-3 form-select"
-          >
-            <option></option>
-            <option>Salary</option>
-            <option>Entertainment</option>
-            <option>Savings</option>
-            <option>Expenses</option>
-            <option>Taxes</option>
-            <option>Retirement</option>
-          </select>
-        </div>
+
         <div className="row">
           <div className="col text-center">
             <button type="submit" className="btn btn-primary">

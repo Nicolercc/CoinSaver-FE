@@ -3,17 +3,35 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav className="navbar">
-      <Link to="/" className="transaction-title">
-        {" "}
-        Budgter{" "}
-      </Link>
-      <button className="navbar-button">
-        <Link to="/add" className="navbar-new-transaction">
-          {" "}
-          Add{" "}
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-light"
+      style={{ height: "10rem" }}
+    >
+      <div className="container-fluid mx-5">
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+          }}
+        >
+          <div className="navbar-brand " style={{ fontSize: "5rem" }}>
+            CoinSaver
+          </div>
         </Link>
-      </button>
+        <div className="d-flex justify-content-end">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link
+                to="/form"
+                className="btn btn-success mx-5 "
+                style={{ fontSize: "2rem" }}
+              >
+                New Transactions
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 }

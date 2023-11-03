@@ -18,7 +18,6 @@ function EditTransaction({ transactionList, setTransactionList }) {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    // try {
     const updatedTransaction = {
       id: uuidv4(),
       date,

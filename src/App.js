@@ -10,7 +10,10 @@ import EditTransaction from "./components/EditTransaction/EditTransaction";
 import "./App.css";
 
 function App() {
-  const baseURL = `https://coinsaverapi.onrender.com/transactions`;
+  const baseURL =
+    process.env.REACT_APP_API_ENDPOINT ||
+    "https://coinsaverapi.onrender.com/transactions";
+
   const [transactionList, setTransactionList] = useState([]);
 
   useEffect(() => {
@@ -24,7 +27,7 @@ function App() {
       }
     }
     fetchTransactions();
-  }, []);
+  }, [baseURL]);
 
   return (
     <Router>

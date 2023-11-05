@@ -34,8 +34,8 @@ function NewItemForm({ setTransactionList, transactionList }) {
         from: "",
         category: "Salary",
       });
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.error("Error creating new item:", error);
     }
   }
 

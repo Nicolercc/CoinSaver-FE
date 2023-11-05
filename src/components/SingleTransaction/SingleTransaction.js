@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function SingleTransaction({ setTransactionList, transactionList }) {
+  // const baseURL = `https://coinsaverapi.onrender.com/transactions`;
+  const baseURL = `http://localhost:3003/transactions`;
   const { id } = useParams();
   const navigate = useNavigate();
-  console.log("updated", id);
 
   const [singleTransaction, setSingleTransaction] = useState(
     transactionList.find((t) => t.id === parseInt(id))
@@ -28,10 +30,16 @@ function SingleTransaction({ setTransactionList, transactionList }) {
   }
 
   async function handleDeleteClick() {
-    setTransactionList((prevList) =>
-      prevList.filter((transaction) => transaction.id !== id)
-    );
-    navigate("/");
+    try {
+      const response = await axios.delete(`${baseURL}/${id}`);
+      console.log(response); // Log the response to see if there are any errors
+      setTransactionList((prevList) =>
+        prevList.filter((transaction) => transaction.id !== id)
+      );
+      navigate("/");
+    } catch (error) {
+      console.error("Error deleting transaction:", error);
+    }
   }
 
   const isNullTransaction = !singleTransaction;

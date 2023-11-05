@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-light"
+      className="navbar navbar-expand-lg navbar-dark bg-dark"
       style={{ height: "10rem" }}
     >
       <div className="container-fluid mx-5">
@@ -23,7 +23,7 @@ function Nav() {
             <li className="nav-item">
               <Link
                 to="/form"
-                className="btn btn-success mx-5 "
+                className="btn btn-primary mx-5 "
                 style={{ fontSize: "2rem" }}
               >
                 New Transactions

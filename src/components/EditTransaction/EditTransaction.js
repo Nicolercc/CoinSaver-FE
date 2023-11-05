@@ -87,17 +87,7 @@ function EditTransaction({ transactionList, setTransactionList }) {
                 className="form-control form-control-lg"
               />
             </div>
-            <div className="m-5">
-              <label htmlFor="category">Category</label>
-              <input
-                type="text"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-                id="category"
-                name="category"
-                className="form-control form-control-lg"
-              />
-            </div>
+
             <div className="row">
               <div className="col text-center">
                 <button type="submit" className="btn btn-primary">

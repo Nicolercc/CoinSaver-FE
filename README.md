@@ -12,7 +12,7 @@ COINSAVER is a financial transaction management application built with JavaScrip
 - **Responsive Styling**: Stylish interface dynamically adjusting based on account balance.
 - **Error Handling**: Robust error handling for a smooth user experience.
 
-## Repositories
+## Deployed Links
 
-- **Backend**: [GitHub Backend Repository](insert-backend-github-link)
-- **Frontend**: [GitHub Frontend Repository](insert-frontend-github-link)
+- **Backend**: [Backend](https://coinsaverapi.onrender.com/transactions)
+- **Frontend**: [Frontend](https://main--jazzy-beijinho-9b2f47.netlify.app/)
